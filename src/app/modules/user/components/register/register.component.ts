@@ -23,4 +23,8 @@ export class RegisterComponent implements OnInit {
       password: 123123,
     });
   }
+
+  onSubmit() {
+    console.log('Submit: ', this.registerForm.value);
+  }
 }

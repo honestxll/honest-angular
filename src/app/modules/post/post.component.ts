@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Post } from './model/post.model';
+import { posts } from './post';
 
 @Component({
   selector: 'app-post',
@@ -8,23 +9,11 @@ import { Post } from './model/post.model';
 })
 export class PostComponent implements OnInit {
   title = 'Posts';
-  entities = [
-    {
-      id: 1,
-      title: 'hello',
-      body:
-        'Unde maxime repellendus accusantium praesentium et quis velit, cumque optio minus?',
-    },
-    {
-      id: 2,
-      title: 'hola',
-      body:
-        'Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam maiores suscipit, aspernatur ex eaque quas. Libero optio amet mollitia.',
-    },
-    { id: 3, title: '你好' },
-  ];
+  entities: Post[];
 
-  constructor() {}
+  constructor() {
+    this.entities = posts;
+  }
 
   ngOnInit() {}
 

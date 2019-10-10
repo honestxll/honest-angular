@@ -8,6 +8,7 @@ const routes: Routes = [
   { path: 'posts', component: PostComponent },
   { path: 'posts/:id', component: PostDetailsComponent },
   { path: 'register', component: RegisterComponent },
+  { path: '', redirectTo: '/posts', pathMatch: 'full' },
 ];
 
 @NgModule({

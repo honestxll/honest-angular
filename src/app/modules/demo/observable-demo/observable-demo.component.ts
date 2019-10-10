@@ -12,8 +12,10 @@ export class ObservableDemoComponent implements OnInit, OnDestroy {
   demoObservable: Observable<any>;
   demoSubscription: Subscription;
   ngOnDestroy(): void {
-    console.log('ngOnDestroy: Unsubscribe demo observable.');
-    this.demoSubscription.unsubscribe();
+    if (this.demoSubscription) {
+      console.log('ngOnDestroy: Unsubscribe demo observable.');
+      this.demoSubscription.unsubscribe();
+    }
   }
 
   ngOnInit() {

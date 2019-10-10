@@ -1,4 +1,4 @@
-<li>
+<li class="list-group-item">
   <h4>
     <a
       [title]="entity.title"
@@ -9,6 +9,8 @@
   </h4>
   <p *ngIf="entity.body">{{ entity.body }}</p>
   <p>
-    <button (click)="onClick(entity)">remove</button>
+    <button class="btn btn-outline-secondary" (click)="onClick(entity)">
+      remove
+    </button>
   </p>
 </li>

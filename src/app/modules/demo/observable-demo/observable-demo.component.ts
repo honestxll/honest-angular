@@ -1,15 +1,20 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable, of } from 'rxjs';
 
 @Component({
   selector: 'app-observable-demo',
   templateUrl: './observable-demo.component.html',
-  styleUrls: ['./observable-demo.component.css']
+  styleUrls: ['./observable-demo.component.css'],
 })
 export class ObservableDemoComponent implements OnInit {
-
-  constructor() { }
+  demoObservable: Observable<string>;
+  constructor() {}
 
   ngOnInit() {
+    this.demoObservable = of('hello', 'hola', '你好');
   }
 
+  onClick() {
+    this.demoObservable.subscribe(value => console.log(value));
+  }
 }

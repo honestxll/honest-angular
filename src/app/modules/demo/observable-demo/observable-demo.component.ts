@@ -1,5 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Observable, of, Subscription, interval } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-observable-demo',
@@ -17,7 +18,9 @@ export class ObservableDemoComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     // this.demoObservable = of('hello', 'hola', '你好');
-    this.demoObservable = interval(1000);
+    const someNumbers = interval(1000);
+    const transformValue = map(value => `# ${value}`);
+    this.demoObservable = transformValue(someNumbers);
   }
 
   onClick() {

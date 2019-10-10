@@ -1,27 +1,49 @@
-# HonestAngular
+# Honest Angular
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.6.
+学习一下 Angular
 
-## Development server
+### 生成子路由模块
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+我现在的模块目录是这样的
 
-## Code scaffolding
+```bash
+src/app/modules
+├── post
+│   ├── components
+│   │   ├── post-details
+│   │   │   ├── post-details.component.css
+│   │   │   ├── post-details.component.html
+│   │   │   ├── post-details.component.spec.ts
+│   │   │   └── post-details.component.ts
+│   │   └── post-item
+│   │       ├── post-item.component.css
+│   │       ├── post-item.component.html
+│   │       ├── post-item.component.spec.ts
+│   │       └── post-item.component.ts
+│   ├── model
+│   │   └── post.model.ts
+│   ├── post-routing.module.ts
+│   ├── post.component.css
+│   ├── post.component.html
+│   ├── post.component.spec.ts
+│   ├── post.component.ts
+│   ├── post.module.ts
+│   ├── post.ts
+│   └── services
+│       ├── post.service.spec.ts
+│       └── post.service.ts
+└── user
+    ├── components
+    │   └── register
+    │       ├── register.component.css
+    │       ├── register.component.html
+    │       ├── register.component.spec.ts
+    │       └── register.component.ts
+    └── user.module.ts
+```
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+现在我想生成一个管理用户的路由，把它放在 user 这个目录下，可以像这样：
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+```bash
+ng g module modules/user/user-routing --module user --flat
+```

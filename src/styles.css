@@ -6,3 +6,7 @@ a:hover {
   text-decoration: none;
   color: #000;
 }
+
+.list-group-item.selected {
+  background: #f8f8f8;
+}

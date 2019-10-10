@@ -9,6 +9,8 @@ import { Post } from '../../model/post.model';
 export class PostItemComponent implements OnInit {
   @Input()
   entity: Post;
+  @Input()
+  selectedId: number;
 
   @Output()
   remove = new EventEmitter();

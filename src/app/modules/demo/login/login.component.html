@@ -1,0 +1,16 @@
+<h3>Login</h3>
+<p>Simulate login process.</p>
+<button
+  class="btn btn-outline-secondary"
+  (click)="login()"
+  *ngIf="!authService.isLoggedIn"
+>
+  Login
+</button>
+<button
+  class="btn btn-outline-secondary"
+  (click)="logout()"
+  *ngIf="authService.isLoggedIn"
+>
+  Logout
+</button>

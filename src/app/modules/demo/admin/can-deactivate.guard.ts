@@ -21,8 +21,6 @@ export class CanDeactivateGuard implements CanDeactivate<any> {
     | Promise<boolean | UrlTree>
     | boolean
     | UrlTree {
-    console.log('Can deactivate guard!');
-
-    return false;
+    return component.canDeactivate();
   }
 }

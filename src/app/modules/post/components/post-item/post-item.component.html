@@ -4,9 +4,12 @@
       [title]="entity.title"
       [textContent]="entity.title"
       [routerLink]="['/posts', entity.id]"
-      routerLinkActive="router-link-active"
+      routerLinkActive="router-link-act ive"
     ></a>
   </h4>
+  <picture>
+    <img [src]="entity.image" [alt]="entity.title" class="image-fluid" />
+  </picture>
   <p *ngIf="entity.body">{{ entity.body }}</p>
   <p>
     <button class="btn btn-outline-secondary" (click)="onClick(entity)">

@@ -15,6 +15,11 @@ export class ObservableDemoComponent implements OnInit {
   }
 
   onClick() {
-    this.demoObservable.subscribe(value => console.log(value));
+    const observer = {
+      next: value => console.log(value),
+      error: error => console.log(error),
+      complete: () => console.log('Demo observable complete.'),
+    };
+    this.demoObservable.subscribe(observer);
   }
 }

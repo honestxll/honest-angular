@@ -11,18 +11,11 @@ import { PostService } from '../../services/post.service';
 export class PostDetailsComponent implements OnInit {
   entity: Post;
 
-  constructor(
-    private route: ActivatedRoute,
-    private postService: PostService,
-    private router: Router,
-  ) {}
+  constructor(private route: ActivatedRoute, private router: Router) {}
 
   ngOnInit() {
-    this.route.paramMap.subscribe(params => {
-      const postId = +params.get('id');
-      console.log(postId);
-
-      this.entity = this.postService.show(postId);
+    this.route.data.subscribe((data: { entity: Post }) => {
+      this.entity = data.entity;
     });
   }
 

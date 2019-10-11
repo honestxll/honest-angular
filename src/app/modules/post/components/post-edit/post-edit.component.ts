@@ -22,7 +22,7 @@ export class PostEditComponent implements OnInit {
 
   ngOnInit() {
     this.route.data.subscribe((data: { entity: Post }) => {
-      this.entity = data.entity;
+      this.postEditForm.patchValue(data.entity);
     });
   }
 

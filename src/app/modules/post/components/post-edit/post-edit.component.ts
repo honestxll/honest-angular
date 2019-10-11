@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { Post } from '../../model/post.model';
+import { PostService } from '../../services/post.service';
 
 @Component({
   selector: 'app-post-edit',
@@ -18,6 +19,7 @@ export class PostEditComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private formBuilder: FormBuilder,
+    private postService: PostService,
   ) {}
 
   ngOnInit() {
@@ -28,5 +30,8 @@ export class PostEditComponent implements OnInit {
 
   onSubmit() {
     console.log(this.postEditForm.value);
+    this.postService
+      .update(+this.route.snapshot.paramMap.get('id'), this.postEditForm.value)
+      .subscribe();
   }
 }

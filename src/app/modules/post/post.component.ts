@@ -29,7 +29,6 @@ export class PostComponent implements OnInit {
       next: (data: Post[]) => {
         this.entities = data;
       },
-      error: (error: HttpErrorResponse) => console.log(error),
     };
     entities$.subscribe(observer);
   }

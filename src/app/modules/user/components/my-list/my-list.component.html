@@ -1,0 +1,9 @@
+<h3 class="mb-5">My List</h3>
+<ul class="list-group list-group-flush">
+  <li class="list-group-item" *ngFor="let entity of entities">
+    <h4>{{ entity.title }}</h4>
+    <picture>
+      <img [src]="entity.image" [alt]="entity.title" class="image-fluid" />
+    </picture>
+  </li>
+</ul>

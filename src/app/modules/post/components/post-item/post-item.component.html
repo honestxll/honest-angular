@@ -12,6 +12,9 @@
   </picture>
   <p *ngIf="entity.body">{{ entity.body }}</p>
   <p>
+    <button class="btn btn-success mr-3" (click)="addToList(entity)">
+      Add To List
+    </button>
     <button class="btn btn-outline-secondary" (click)="onClick(entity)">
       remove
     </button>

@@ -5,5 +5,10 @@
     <picture>
       <img [src]="entity.image" [alt]="entity.title" class="image-fluid" />
     </picture>
+    <p class="mt-3">
+      <button class="btn btn-danger" (click)="removeItemFromList(entity.id)">
+        Remove
+      </button>
+    </p>
   </li>
 </ul>

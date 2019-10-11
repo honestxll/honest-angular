@@ -1,1 +1,31 @@
-<p>post-edit works!</p>
+<form [formGroup]="postEditForm" (ngSubmit)="onSubmit()">
+  <div class="form-group">
+    <label>Title</label>
+    <input
+      type="text"
+      class="form-control"
+      placeholder="please input title."
+      formControlName="title"
+    />
+  </div>
+  <div class="form-group">
+    <label>Image</label>
+    <input
+      type="text"
+      class="form-control"
+      placeholder="please input image."
+      formControlName="image"
+    />
+  </div>
+  <div class="form-group">
+    <label>Body</label>
+    <textarea
+      class="form-control"
+      formControlName="body"
+      rows="3"
+      placeholder="please input body."
+    ></textarea>
+  </div>
+  <button type="button" class="btn btn-info mr-3" routerLink="../">Back</button>
+  <button type="submit" class="btn btn-primary">Update</button>
+</form>

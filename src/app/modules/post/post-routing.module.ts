@@ -17,6 +17,9 @@ const routes: Routes = [
   {
     path: 'posts/:id/edit',
     component: PostEditComponent,
+    resolve: {
+      entity: PostDetailResolveService,
+    },
   },
 ];
 
